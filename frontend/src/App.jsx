@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import AboutMe from "./components/AboutMe";
+import Header from "./components/Header";
+import Picture from "./components/Picture";
+import Section from "./components/Section";
+import Skills from "./components/Skills";
 
-function App() {
-  const [count, setCount] = useState(0)
+const sections = [
+  {
+    name: "Projects",
+    imgLink: "https://img.icons8.com/?size=100&id=102880&format=png&color=000000"
+  },
+  {
+    name: "Education",
+    imgLink: "https://img.icons8.com/?size=100&id=73815&format=png&color=000000"
+  },
+  {
+    name: "Experience",
+    imgLink: "https://img.icons8.com/?size=100&id=105385&format=png&color=000000"
+  },
+  {
+    name: "Skills",
+    imgLink: "https://img.icons8.com/?size=100&id=58854&format=png&color=000000"
+  },
+  {
+    name: "Testimonials",
+    imgLink: "https://img.icons8.com/?size=100&id=vHx1vWgU6OQc&format=png&color=000000"
+  },
+  {
+    name: "Contact me",
+    imgLink: "https://img.icons8.com/?size=100&id=2817&format=png&color=000000"
+  }
+];
 
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="bg-gray-50 bg-gradient-to-r from-blue-500 to-purple-500">
+      <Header />
+      <div className="flex mx-10">
+        <div className="w-full ">
+          <div className="flex">
+            <Picture />
+            <AboutMe />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="flex pb-5 m-10 mx-20 gap-28">
+        {sections.map((section) => {
+          return (
+            <Section
+              key={section.name}
+              name={section.name}
+              imgLink={section.imgLink}
+            />
+          );
+        })}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
