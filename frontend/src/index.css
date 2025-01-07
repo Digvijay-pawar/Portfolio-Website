@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     font-family: 'Pacifico', cursive;
     font-weight: 500;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
 }

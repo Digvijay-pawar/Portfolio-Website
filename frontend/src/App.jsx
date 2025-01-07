@@ -3,6 +3,9 @@ import Header from "./components/Header";
 import Picture from "./components/Picture";
 import Section from "./components/Section";
 import Skills from "./components/Skills";
+import Projects from './components/Projects'
+import Education from "./components/Education";
+import Contact from "./components/Contact";
 
 const sections = [
   {
@@ -43,7 +46,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="flex pb-5 m-10 mx-20 gap-28">
+      <div className="pb-3 flex m-10 mx-20 gap-28">
         {sections.map((section) => {
           return (
             <Section
@@ -53,6 +56,18 @@ const App = () => {
             />
           );
         })}
+      </div>
+      <div className="bg-gray-50">
+        <Education/>
+      </div>
+      <div className="p-5">
+        <Projects/>
+      </div>
+      <div className="bg-gray-50 p-5">
+        <Skills/>
+      </div>
+      <div className="bg-gradient-to-r from-blue-500 to-purple-500">
+        <Contact/>
       </div>
     </div>
   );
